@@ -4,39 +4,36 @@ print('''-----------------------------
 ----- WHERE'S THE MONEY -----
 -----------------------------''')
 
-salary = (input("What is your annual salary?\n"))
+salary = input("What is your annual salary?\n")
 if salary.isnumeric() == False:
-  print(salary.isnumeric())
   print("Must enter positive integer for salary.")
   exit()
-rent = (input("How much is your monthly mortgage or rent?\n"))*12
-if salary.isnumeric() == False:
-  print(salary.isnumeric())
+
+rent = input("How much is your monthly mortgage or rent?\n")*12
+if rent.isnumeric() == False:
   print("Must enter positive integer for mortgage or rent.")
   exit()
-bills = (input("What do you spend on bills monthly?\n"))*12
-if salary.isnumeric() == False:
-  print(salary.isnumeric())
+
+bills = input("What do you spend on bills monthly?\n")*12
+if bills.isnumeric() == False:
   print("Must enter positive integer for bills.")
   exit()
-food = (input("What are your weekly grocery/food expenses?\n"))*52
-if salary.isnumeric() == False:
-  print(salary.isnumeric())
+
+food = input("What are your weekly grocery/food expenses?\n")*52
+if food.isnumeric() == False:
   print("Must enter positive integer for food.")
   exit()
-travel = (input("How much do you spend on travel annually?\n"))
-if salary.isnumeric() == False:
-  print(salary.isnumeric())
+
+travel = input("How much do you spend on travel annually?\n")
+if travel.isnumeric() == False:
   print("Must enter positive integer for travel.")
   exit()
 
-#salary = 50000
-#rent = 1000*12
-#bills = 400*12
-#food = 200*52
-#travel = 2500
-
-
+salary = int(salary)
+rent = int(rent)*12
+bills = int(bills)*12
+food = int(food)*52
+travel = int(food)
 tax = None
 
 if 0 < salary <= 15000:
