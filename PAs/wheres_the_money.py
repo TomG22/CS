@@ -63,15 +63,15 @@ greatest = max(int((rent/salary)*100),
                int((tax/salary)*100), 
                int((extra/salary)*100))
 
-print('\n'+''+'------------------------------------------'+'-'*(greatest)+
+print('\n'+''+'------------------------------------------'+'-'*int((greatest/salary)*100)+
       '\nSee the financial breakdown below, based on a salary of $'+str(salary)+
       '\n'+''+'------------------------------------------'+'-'*(greatest)+
-      '\n| mortgage/rent | $'+format(rent, '9,.2f')+ ' |  '+format((rent/salary)*100, '4,.1f')+'% | '+'#'*int((rent/salary)*100)+
-      '\n|         bills | $'+format(bills, '9,.2f')+ ' |  '+format((bills/salary)*100, '4,.1f')+'% | '+'#'*int((bills/salary)*100)+
-      '\n|          food | $'+format(food, '9,.2f')+ ' |  '+format((food/salary)*100, '4,.1f')+'% | '+'#'*int((food/salary)*100)+
-      '\n|        travel | $'+format(travel, '9,.2f')+ ' |  '+format((travel/salary)*100, '4,.1f')+'% | '+'#'*int((travel/salary)*100)+
-      '\n|           tax | $'+format(tax, '9,.2f')+ ' |  '+format((tax/salary)*100, '4,.1f')+'% | '+'#'*int((tax/salary)*100)+
-      '\n|         extra | $'+format(extra, '9,.2f')+ ' |  '+format((extra/salary)*100, '4,.1f')+'% | '+'#'*int((extra/salary)*100)+
+      '\n| mortgage/rent | $ '+format(rent, '10,.2f')+ ' |  '+format((rent/salary)*100, '4,.1f')+'% | '+'#'*int((rent/salary)*100)+
+      '\n|         bills | $ '+format(bills, '10,.2f')+ ' |  '+format((bills/salary)*100, '4,.1f')+'% | '+'#'*int((bills/salary)*100)+
+      '\n|          food | $ '+format(food, '10,.2f')+ ' |  '+format((food/salary)*100, '4,.1f')+'% | '+'#'*int((food/salary)*100)+
+      '\n|        travel | $ '+format(travel, '10,.2f')+ ' |  '+format((travel/salary)*100, '4,.1f')+'% | '+'#'*int((travel/salary)*100)+
+      '\n|           tax | $ '+format(tax, '10,.2f')+ ' |  '+format((tax/salary)*100, '4,.1f')+'% | '+'#'*int((tax/salary)*100)+
+      '\n|         extra | $ '+format(extra, '10,.2f')+ ' |  '+format((extra/salary)*100, '4,.1f')+'% | '+'#'*int((extra/salary)*100)+
       '\n'+'------------------------------------------'+'-'*(greatest))
 
 if tax >= 75000:
