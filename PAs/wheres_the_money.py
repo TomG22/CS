@@ -48,11 +48,12 @@ elif 15000 < salary <= 75000:
 elif 75000 < salary <= 200000:
   tax = 0.25
 else:
-  tax = 0.15 
-  #It's unexplained why the tax is 15% in the instructions for the assignment if the tax cap is hit. Logically, it should be 20. 
-  #This information can only be found in the gradescope grader results.
+  tax = 0.30
 
 tax = salary*tax
+if tax > 75000:
+  tax = 75000
+
 expenses = rent+bills+food+travel
 extra = salary-(expenses+tax)
 greatest = max(int((rent/salary)*100), 
@@ -73,7 +74,7 @@ print('\n'+''+'------------------------------------------'+'-'*(greatest)+
       '\n|         extra | $'+format(extra, '9,.2f')+ ' |  '+format((extra/salary)*100, '4,.1f')+'% | '+'#'*int((extra/salary)*100)+
       '\n'+'------------------------------------------'+'-'*(greatest))
 
-if tax > 75000:
+if tax >= 75000:
   print(">>> TAX LIMIT REACHED <<<")
 
 if salary < expenses+tax:
