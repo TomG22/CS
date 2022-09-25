@@ -1,0 +1,8 @@
+def rectangle():
+	print('''\
++--+
+|  |
+|  |
++--+''')
+
+rectangle()
