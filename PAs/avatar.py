@@ -7,31 +7,32 @@
 # Type exit to exit the program early.
 #
 
+'''Each of the below functions prints out their particular module of the character'''
 
 def f_hat_style(style):
-	if style == "left":
-		print('''
-          ~-~       
+    '''This function takes in a string to determine which hat style to print'''
+    if style == "left":
+        print('''~-~       
         /-~-~-\\
     ___/_______\\''')
-	elif style == "right":
-		print('''
+    elif style == "right":
+        print('''
        ~-~       
      /-~-~-\\     
     /_______\\___''')
-	elif style == "both":
-				print('''
+    elif style == "both":
+        print('''
        ~-~       
      /-~-~-\\     
  ___/_______\\___ ''')
-	elif style == "front":
-		print('''
+    elif style == "front":
+        print('''
        ~-~       
      /-~-~-\\     
     /_______\\''')
 
-
 def f_hair(bool):
+    '''This function takes in a boolean to determine which type of hairstyle to print'''
     if bool == "True":
         print(
 '''   "|   V   |"    
@@ -43,7 +44,10 @@ def f_hair(bool):
     |  ~~~  |     
      \\_____/""")
 
+
 def f_eyes(style, hair_bool):
+    '''This function takes in a string parameter for the style of the eye
+    along with a boolean to determine which hair style should be printed'''
     if hair_bool == "True":
         print('   "|"""""""|"')
         print('   "| ' + style + "   " + style + ' |"')
@@ -51,10 +55,16 @@ def f_eyes(style, hair_bool):
         print("    |'''''''|")
         print("    | " + style + "   " + style + " |")
 
-def f_arms(style, torso_length):
+
+def f_arms(style):
+    '''This function prints the arms of the character.
+    The first parameter takes in a string used to style the arm'''
     print(" 0" + style * 4 + "|---|" + style * 4 + "0")
 
+
 def f_torso(length):
+    '''Prints the torso of the character, taking into account the 
+    numeric parameter to set the length of the torso'''
     i = 0
     while i < length:
         print("      |-X-|")
@@ -62,44 +72,55 @@ def f_torso(length):
     print("      HHHHH")
 
 def f_legs(length):
+    '''Prints the legs of the character, basing the length off of the given parameter'''
     i = 0
     while i < length:
         print(" " * (5 - i) + "///" + " " + "  " * i + "\\\\\\")
         i += 1
 
 def f_shoes(style):
-        print(style + "       " + style)
+    '''Prints the shoes of the character, basing the style off of the parameter given'''
+    print(style + "       " + style)
+
 
 def Jeff():
+    '''Prints out Jeff character preset using the modular based parts of the functions above'''
     f_hat_style("both")
     f_eyes("0", "False")
     f_hair("False")
     print("      |-X-|")
-    f_arms("=", 4)
+    f_arms("=")
     f_torso(4)
     f_legs(2)
     f_shoes("#HHH#")
 
+
 def Jane():
+    '''Prints out Jane character preset using the modular based parts of the functions above'''
     f_hat_style("right")
     f_eyes("*", "True")
     f_hair("True")
-    f_arms("T", 2)
+    f_arms("T")
     f_torso(2)
     f_legs(3)
     f_shoes("<|||>")
 
+
 def Chris():
+    '''Prints out Chris character preset using the modular based parts of the functions above'''
     f_hat_style("front")
     f_eyes("U", "False")
     f_hair("False")
     print("      |-X-|")
-    f_arms("W", 2)
+    f_arms("W")
     f_torso(2)
     f_legs(4)
     f_shoes("<>-<>")
 
+
 def custom():
+    '''Asks the user for custom settings using the modular based parts of the functions above
+    to apply these settings.'''
     print("Answer the following questions to create a custom avatar")
     hat = input("Hat style ?\n")
     eyes = input("Character for eyes ?\n")
@@ -111,12 +132,15 @@ def custom():
     f_hat_style(hat)
     f_eyes(eyes, hair)
     f_hair(hair)
-    f_arms(arms, torso)
+    f_arms(arms)
     f_torso(torso)
     f_legs(legs)
     f_shoes(shoes)
 
-def init_prompt():
+
+def main():
+    '''Prints the initial text and inputs for the character settings
+    if the inputted string is a character preset name, the corresponding function is called'''
     print("----- AVATAR -----")
 
     avatar_type = input("Select an Avatar or create your own:\n")
@@ -132,4 +156,4 @@ def init_prompt():
     elif avatar_type == "custom":    
         custom()
 
-init_prompt()
+main()

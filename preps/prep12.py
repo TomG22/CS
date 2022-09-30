@@ -7,4 +7,3 @@ def average_numbers(amount):
 		i += 1 
 	avg = str(round(total/amount, 2))
 	print("Average = " + avg)
-	
