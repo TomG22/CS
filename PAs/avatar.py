@@ -10,7 +10,10 @@
 '''Each of the below functions prints out their particular module of the character'''
 
 def f_hat_style(style):
-    '''This function takes in a string to determine which hat style to print'''
+    '''
+    This function takes in a string to determine which hat style to print
+    Parameters: style can be a string
+    '''
     if style == "left":
         print('''~-~       
         /-~-~-\\
@@ -32,7 +35,10 @@ def f_hat_style(style):
     /_______\\''')
 
 def f_hair(bool):
-    '''This function takes in a boolean to determine which type of hairstyle to print'''
+    '''
+    This function takes in a boolean to determine which type of hairstyle to print
+    Parameters: bool can be a string
+    '''
     if bool == "True":
         print(
 '''   "|   V   |"    
@@ -44,10 +50,12 @@ def f_hair(bool):
     |  ~~~  |     
      \\_____/""")
 
-
 def f_eyes(style, hair_bool):
-    '''This function takes in a string parameter for the style of the eye
-    along with a boolean to determine which hair style should be printed'''
+    '''
+    This function takes in a string parameter for the style of the eye
+    along with a boolean to determine which hair style should be printed
+    Parameters: style can be a string, hair_bool can be a string
+    '''
     if hair_bool == "True":
         print('   "|"""""""|"')
         print('   "| ' + style + "   " + style + ' |"')
@@ -55,16 +63,20 @@ def f_eyes(style, hair_bool):
         print("    |'''''''|")
         print("    | " + style + "   " + style + " |")
 
-
 def f_arms(style):
-    '''This function prints the arms of the character.
-    The first parameter takes in a string used to style the arm'''
+    '''
+    This function prints the arms of the character.
+    The first parameter takes in a string used to style the arm
+    Parameters: style can be a string
+    '''
     print(" 0" + style * 4 + "|---|" + style * 4 + "0")
 
-
 def f_torso(length):
-    '''Prints the torso of the character, taking into account the 
-    numeric parameter to set the length of the torso'''
+    '''
+    Prints the torso of the character, taking into account the 
+    numeric parameter to set the length of the torso
+    Parameters: length can be an integer 
+    '''
     i = 0
     while i < length:
         print("      |-X-|")
@@ -72,19 +84,27 @@ def f_torso(length):
     print("      HHHHH")
 
 def f_legs(length):
-    '''Prints the legs of the character, basing the length off of the given parameter'''
+    '''
+    Prints the legs of the character, basing the length off of the given parameter
+    Parameters: length can be an integer
+    '''
     i = 0
     while i < length:
         print(" " * (5 - i) + "///" + " " + "  " * i + "\\\\\\")
         i += 1
 
 def f_shoes(style):
-    '''Prints the shoes of the character, basing the style off of the parameter given'''
+    '''
+    Prints the shoes of the character based off the style off of the parameter given
+    Parameters: style can be a string
+    '''
     print(style + "       " + style)
 
-
 def Jeff():
-    '''Prints out Jeff character preset using the modular based parts of the functions above'''
+    '''
+    Prints out Jeff character preset using the modular based parts of the functions above
+    Parameters: None
+    '''
     f_hat_style("both")
     f_eyes("0", "False")
     f_hair("False")
@@ -94,9 +114,11 @@ def Jeff():
     f_legs(2)
     f_shoes("#HHH#")
 
-
 def Jane():
-    '''Prints out Jane character preset using the modular based parts of the functions above'''
+    '''
+    Prints out Jane character preset using the modular based parts of the functions above
+    Parameters: None
+    '''
     f_hat_style("right")
     f_eyes("*", "True")
     f_hair("True")
@@ -105,9 +127,11 @@ def Jane():
     f_legs(3)
     f_shoes("<|||>")
 
-
 def Chris():
-    '''Prints out Chris character preset using the modular based parts of the functions above'''
+    '''
+    Prints out Chris character preset using the modular based parts of the functions above
+    Parameters: None
+    '''
     f_hat_style("front")
     f_eyes("U", "False")
     f_hair("False")
@@ -117,10 +141,11 @@ def Chris():
     f_legs(4)
     f_shoes("<>-<>")
 
-
 def custom():
     '''Asks the user for custom settings using the modular based parts of the functions above
-    to apply these settings.'''
+    to apply these settings.
+    Parameters: None
+    '''
     print("Answer the following questions to create a custom avatar")
     hat = input("Hat style ?\n")
     eyes = input("Character for eyes ?\n")
@@ -137,14 +162,11 @@ def custom():
     f_legs(legs)
     f_shoes(shoes)
 
-
-def main():
-    '''Prints the initial text and inputs for the character settings
-    if the inputted string is a character preset name, the corresponding function is called'''
+def main(): 
     print("----- AVATAR -----")
-
     avatar_type = input("Select an Avatar or create your own:\n")
-    while avatar_type != "custom" and avatar_type != "Jeff" and avatar_type != "Jane" and avatar_type != "Chris" and avatar_type != "exit":  
+    while avatar_type != "custom" and avatar_type != "Jeff" and avatar_type != "Jane" and avatar_type != "Chris" and\
+    avatar_type != "exit":
         avatar_type = input("Select an Avatar or create your own:\n")
 
     if avatar_type == "Jeff":
@@ -153,7 +175,7 @@ def main():
         Jane()
     elif avatar_type == "Chris":
         Chris()
-    elif avatar_type == "custom":    
+    elif avatar_type == "custom":
         custom()
 
 main()
