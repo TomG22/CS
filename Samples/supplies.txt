@@ -1,0 +1,5 @@
+tv  0
+mouse 100
+monitor 0
+speakers 12
+iphone 5
